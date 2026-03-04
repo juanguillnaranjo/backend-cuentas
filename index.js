@@ -13,8 +13,6 @@ mongoose.connect('process.env.MONGODB_URI')
 	app.listen(port, '0.0.0.0',()=>{
 	    console.log("Servidor corriendo correctamente e, eso espero");
 	  });
-		
-	})
 	.catch(err => console.error('MongoDB Atlas error:', err));
 
 });
