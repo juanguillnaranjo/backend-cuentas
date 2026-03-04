@@ -1,8 +1,12 @@
 'use strict'
 
 var express = require('express');
+const mongoose = require('mongoose');  // <--- Esto faltaba
 var cors = require('cors');   // ← importar así
+require('dotenv').config();
+
 var app = express();
+
 
 // activar CORS
 app.use(cors());              // ← aquí se ejecuta
