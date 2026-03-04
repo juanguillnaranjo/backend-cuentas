@@ -2,20 +2,21 @@
 require('dotenv').config();
 var mongoose = require('mongoose');
 var app = require('./app.js');
-var port = 1000;
+
+var port = process.env.PORT || 1000;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('process.env.MONGODB_URI')
-	.then(()=>{
-		console.log("conexion establecida con exito");
 
-		//creacion del servidor
-	app.listen(port, '0.0.0.0',()=>{
-	    console.log("Servidor corriendo correctamente e, eso espero");
-	  })
-		
-	.catch(err => console.error('MongoDB Atlas error:', err));
-
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => {
+	console.log("✅ Conexión establecida con MongoDB Atlas");
+	
+	app.listen(port, '0.0.0.0', () => {
+	  console.log("🚀 Servidor corriendo en puerto " + port);
+	});
+})
+.catch(err => {
+	console.error('❌ Error de MongoDB Atlas:', err);
 });
 
-module.exports = connection;
+
