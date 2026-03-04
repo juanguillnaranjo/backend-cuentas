@@ -2,7 +2,7 @@
 require('dotenv').config();
 var mongoose = require('mongoose');
 var app = require('./app.js');
-var port = 3700;
+var port = 1000;
 
 mongoose.Promise = global.Promise;
 mongoose.connect('process.env.MONGODB_URI')
