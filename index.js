@@ -5,23 +5,31 @@ var app = require('./app.js');
 var port = 3700;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/CuentasOrange')
+mongoose.connect('process.env.MONGODB_URI')
 	.then(()=>{
 		console.log("conexion establecida con exito");
 
 		//creacion del servidor
 
 		//cracion del servidor
-	  app.listen(port, '0.0.0.0',()=>{
-	    console.log("Servidor corriendo correctamente en la url: Localhost 3700");
-	  });
+	  	app.listen(PORT, () => {
+		  console.log(`Backend corriendo en web server en puerto ${PORT}`);
+		});
+
 
 	})
-	.catch(err=>console.log(err));
+	.catch(err => console.error('MongoDB Atlas error:', err));
 
 const mysql = require('mysql2');
 
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('MongoDB conectado, eso creo'))
+  .catch(err => console.error('MongoDB Atlas error:', err));
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Backend corriendo en puerto ${PORT}`);
+});
 
 // Crear conexión
 const connection = mysql.createConnection({
