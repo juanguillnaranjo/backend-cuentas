@@ -1,0 +1,20 @@
+'use strict'
+
+var express = require('express');
+var cors = require('cors');   // ← importar así
+var app = express();
+
+// activar CORS
+app.use(cors());              // ← aquí se ejecuta
+
+// cargar rutas
+var cuentas_routes = require('./routes/routes-cuentas');
+
+// middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// rutas
+app.use('/api', cuentas_routes);
+
+module.exports = app;
