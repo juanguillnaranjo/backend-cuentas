@@ -92,8 +92,8 @@ var controller = {
 
 	        var modelSalidaCajao = new salidaCaja({
 	            fecha: params.fecha,
-	            efectivo: params.efectivo,
-	            transferencia: params.transferencia,
+	            efectivo: params.efectivo*-1,
+	            transferencia: params.transferencia*-1,
 	            totalSalida: totalIngreso,
 	            detalleSalida: "Retiro caja Orange",
 	            consecutivo: consecutivo
