@@ -10,36 +10,12 @@ mongoose.connect('process.env.MONGODB_URI')
 		console.log("conexion establecida con exito");
 
 		//creacion del servidor
-
-		//cracion del servidor
-	  	app.listen(PORT, () => {
-		  console.log(`Backend corriendo en web server en puerto ${PORT}`);
-		});
-
-
+	app.listen(port, '0.0.0.0',()=>{
+	    console.log("Servidor corriendo correctamente e, eso espero");
+	  });
+		
 	})
 	.catch(err => console.error('MongoDB Atlas error:', err));
-
-const mysql = require('mysql2');
-
-
-// Crear conexión
-const connection = mysql.createConnection({
-  host: 'appiorange.com',
-  user: 'appioran_juangui009',
-  password: 'Juangui123/', // tu contraseña
-  database: 'appioran_BdOrange',
-  port: 3306
-});
-
-// Conectar
-connection.connect((err) => {
-  if (err) {
-    console.error('Error conectando:', err);
-    return;
-  }
-  console.log('Conectado a MySQL');
-
 
 });
 
