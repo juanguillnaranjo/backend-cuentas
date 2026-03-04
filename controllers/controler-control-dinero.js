@@ -158,8 +158,8 @@ var controller = {
 	            Number(params.efectivo || 0) +
 	            Number(params.transferencia || 0);
 
-	        const efectivo = params.efectivo*-1;
-	        const transferencia = params.transferencia*-1;
+	        const efectivo = params.efectivo;
+	        const transferencia = params.transferencia;
 
 	        var modelAdicionBase = new adicionBase({
 	        	consecutivo: consecutivo,
