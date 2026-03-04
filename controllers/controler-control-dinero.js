@@ -34,7 +34,7 @@ async function registrarEnControlDinero({
     let consecutivo = 1;
 
     if (ultimoRegistro) {
-        consecutivo = ultimoRegistro.consecutivo + 1;
+        consecutivo = ultimoRegistro.consecutivo + 1 || 1;
     }
 
     // 🧮 calcular salida
