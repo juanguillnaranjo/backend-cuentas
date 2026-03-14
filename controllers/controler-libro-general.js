@@ -64,7 +64,7 @@ var controller = {
 
 		        return {
 		          ...mov.toObject(),
-		          saldo2: saldoAcumulado  // 👈 saldo calculado dinámicamente
+		          saldo: saldoAcumulado  // 👈 saldo calculado dinámicamente
 		        };
 
 	    	});
