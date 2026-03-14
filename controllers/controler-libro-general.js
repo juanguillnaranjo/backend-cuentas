@@ -46,7 +46,7 @@ var controller = {
 
 	        const movimientos  = await libroGeneral
 	            .find({})
-	            .sort({ fecha: -1, _id: 1 });  // últimos primero
+	            .sort({ fecha: 1});  // últimos primero
 
 	        if (movimientos .length === 0) {
 	            return res.status(404).send({
